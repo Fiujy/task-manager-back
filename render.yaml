@@ -1,0 +1,15 @@
+services:
+  - name: task-manager-backend
+    type: web
+    env: docker
+    dockerfilePath: Dockerfile
+    region: oregon
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: NODE_ENV
+        value: production
+    buildCommand: ""
+    startCommand: ""
+    healthCheckPath: "/health"
+    autoDeploy: true
